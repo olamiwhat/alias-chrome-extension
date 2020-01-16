@@ -7,13 +7,16 @@ document.body.append(getProfile);
 
 const getProfileAction = document.querySelector('#getProfile_btn');
 getProfileAction.onclick = function getProfileDetails() {
-  const infoDiv = document.getElementById('popup');
-  console.log('infoDiv: ', infoDiv);
   fetch('https://uinames.com/api/?ext')
     .then((resp) => resp.json())
     .then((data) => {
       const person = data;
       console.log(person);
+      const infoDiv = document.getElementById('popup');
+      console.log('infoDiv: ', infoDiv);
+      if (infoDiv.innerHTML) {
+        infoDiv.innerHTML = '';
+      }
       const div = document.createElement('div');
       div.setAttribute('id', 'info');
       const keys = Object.keys(person);
@@ -24,11 +27,13 @@ getProfileAction.onclick = function getProfileDetails() {
           if (key === 'birthday') {
             const t = document.createTextNode(`${key.toUpperCase()}: ${Object.values(person[key])[0]}`);
             p.append(t);
-          } else if (key === 'credit_card') {
-            const ccV = Object.values(person[key]);
-            const ti = document.createTextNode(`${key.toUpperCase()}: expiration: ${ccV[0]} number: ${ccV[1]}, pin: ${ccV[2]}, security: ${ccV[3]}`);
-            p.append(ti);
-          } else if (key === 'photo') {
+          }
+          // else if (key === 'credit_card') {
+          //   const ccV = Object.values(person[key]);
+          //   const ti = document.createTextNode(`${key.toUpperCase()}: expiration: ${ccV[0]} number: ${ccV[1]}, pin: ${ccV[2]}, security: ${ccV[3]}`);
+          //   p.append(ti);
+          // }
+          else if (key === 'photo') {
             const pp = document.createElement('img');
             pp.id = 'profile_picture';
             pp.setAttribute('src', `${person[key]}`);
