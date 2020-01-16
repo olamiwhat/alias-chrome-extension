@@ -1,0 +1,10 @@
+{
+    "name": "Alias",
+    "version": "1.0",
+    "description": "This extension will generate fake names",    
+    "manifest_version": 2,
+
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+  }

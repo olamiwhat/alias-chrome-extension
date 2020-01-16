@@ -1,0 +1,49 @@
+body {
+    font-family:Georgia, serif;
+    font-size: 14px;
+    width: 400px;
+    background-color: rgba(220, 220, 220, 0.2);
+}
+
+
+#heading{
+    margin-left: 110px;
+}
+
+#name {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2em;
+    position: relative;
+    top:7px;
+    left: 55px;
+}
+
+.logo{
+    width: 50px;
+    position: absolute;
+    /*margin-right: 75px;*/
+}
+
+#info {
+    font-weight: bold;
+    line-height: 22px;
+    margin-left: 20px;
+}
+
+#profile_picture {
+    margin-top: 10px;
+    width: 40%;
+    margin-left: 90px;
+    border-radius: 50px;
+
+}
+
+
+#getProfile_btn {
+ 
+    margin-left: 140px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 7px;
+    padding: 8px 12px;   
+}
